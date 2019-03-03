@@ -14,9 +14,9 @@ public class StdDev {
         	int i=0;
         	while(!toFinish)
         	{
-        		numArrayX.add(event.values[0]);
-        		numArrayY.add(event.values[1]);
-        		numArrayZ.add(event.values[2]);
+        		numArrayX.add(abs(event.values[0]));
+        		numArrayY.add(abs(event.values[1]));
+        		numArrayZ.add(abs(event.values[2]));
         		toFinish=(System.nanoTime()-startTime >= totalTime);
         	}
         	double SDX = calculateSD(numArrayX);
@@ -43,6 +43,9 @@ public class StdDev {
             	//Car
             	//Send notifications
             }
+            else if( SDY>1 && SDZ>1 ){
+            	//Chatting
+            }
 
         	
         }
@@ -66,3 +69,4 @@ public class StdDev {
         return Math.sqrt(standardDeviation/length);
     }
 }
+
